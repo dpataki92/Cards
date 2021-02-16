@@ -19,4 +19,9 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  # returns a tuple (fixed-size containers for multiple elements) => {hand: [], deck: []}
+  def deal(deck, hand_size) do
+    Enum.split(deck, hand_size)
+  end
+
 end

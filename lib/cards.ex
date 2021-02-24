@@ -25,3 +25,12 @@ defmodule Cards do
   end
 
 end
+
+
+# patter matching (elixir's replacement for variable assignments)
+{hands, rest_of_deck} = Cards.deal(cards, 5)
+
+[ color ] = [ "red"] # color => "red"
+color = [ "red"] # color => ["red"]
+
+[ color1, color2, color3 ] = [ "red", "blue"] # ERROR => pattern doesn't match

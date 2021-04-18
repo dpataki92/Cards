@@ -43,6 +43,14 @@ defmodule Cards do
     end
   end
 
+  # calls multiple functions in one function using the pipe operator
+  def create_hand(hand_size) do
+    # result of each method is automatically sent on to the next method in the chain as first argument(!)
+    Cards.create_deck
+    |> Cards.shuffle
+    |> Cards.deal(hand_size)
+  end
+
 end
 
 

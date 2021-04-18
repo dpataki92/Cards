@@ -4,6 +4,7 @@ defmodule Cards do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
+    # list comprehension - mapping function that returns a brand new (single) array
     for suit <- suits, value <- values do
         "#{value} of #{suit}"
     end
@@ -27,10 +28,10 @@ defmodule Cards do
 end
 
 
-# patter matching (elixir's replacement for variable assignments)
-{hands, rest_of_deck} = Cards.deal(cards, 5)
+# PATTERN MATCHING (elixir's replacement for variable assignments)
+# {hand, rest_of_deck} = Cards.deal(cards, 5)
 
-[ color ] = [ "red"] # color => "red"
-color = [ "red"] # color => ["red"]
+# [ color ] = [ "red"] # color => "red"
+# color = [ "red"] # color => ["red"]
 
-[ color1, color2, color3 ] = [ "red", "blue"] # ERROR => pattern doesn't match
+# [ color1, color2, color3 ] = [ "red", "blue"] # ERROR => pattern doesn't match

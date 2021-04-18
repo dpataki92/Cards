@@ -25,6 +25,15 @@ defmodule Cards do
     Enum.split(deck, hand_size)
   end
 
+  # saves our deck in a seperate file
+  def save(deck, filename) do
+    # turns list of strings into a binary object (erlang's definition of an object that can be safely stored in a non-erlang environment)
+    binary = :erlang.term_to_binary(deck)
+
+    # writes out object in the given file
+    File.write(filename, binary)
+  end
+
 end
 
 

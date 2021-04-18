@@ -34,6 +34,16 @@ defmodule Cards do
     File.write(filename, binary)
   end
 
+  # reads binary object and converts into Elixir code in case reading was successful 
+  def load(filename) do
+    { status, binary} = File.read(filename)
+
+    case status do
+      :ok -> :erlang.binary_to_term binary
+      :error -> "That file does not exist"
+    end
+  end
+
 end
 
 
